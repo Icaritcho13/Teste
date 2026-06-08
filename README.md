@@ -41,8 +41,6 @@ O H2 sobe junto com a aplicação. Para inspecionar o saldo em tempo real:
 
 Duas contas já são criadas na inicialização (ver `src/main/resources/import.sql`), ambas com `id = 1` e saldo `1000.00`.
 
-> Observação: o banco é em memória e **zera a cada reinício** da aplicação. Cada execução começa do estado limpo.
-
 ## Endpoints
 
 ### Parte 1 — sem controle de concorrência
