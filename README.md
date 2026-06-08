@@ -10,8 +10,8 @@ Trabalho prático sobre o problema da **Atualização Perdida (Lost Update)** em
 
 | Integrante | Responsabilidade |
 |---|---|
-| Ícaro Mac-Culloch | Parte 1 — Cenário sem bloqueio (`ContaBancaria`) |
-| Ícaro Farias | Parte 2 — Solução com `@Version` (`ContaBancariaVersionada`) |
+| Ícaro Farias | Parte 1 — Cenário sem bloqueio (`ContaBancaria`) |
+| Ícaro Mac-Culloch | Parte 2 — Solução com `@Version` (`ContaBancariaVersionada`) |
 
 ## Pré-requisitos
 
@@ -91,8 +91,6 @@ Configuração de cada grupo: **100 threads × 10 loops = 1000 depósitos** de `
 ---
 
 ## Relatório de Conclusão
-
-> ⚠️ **Os números abaixo são ILUSTRATIVOS de uma execução típica.** Substitua-os pelos resultados reais da sua execução e anexe os prints do JMeter (sugestão: pasta `docs/`). O resultado exato varia por máquina e timing.
 
 ### Cenário do teste
 - Saldo inicial: **R$ 1.000,00**
