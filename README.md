@@ -84,10 +84,6 @@ Configuração de cada grupo: **100 threads × 10 loops = 1000 depósitos** de `
 4. **Reinicie a aplicação** (para zerar o saldo).
 5. **Parte 2:** desabilite o grupo da Parte 1, habilite o grupo da Parte 2 e rode novamente. Confira o saldo, a coluna `version` e os códigos `409` na *Arvore de Resultados*.
 
-> Variáveis configuráveis no topo do plano (User Defined Variables): `HOST`, `PORT`, `CONTA_ID`, `VALOR`.
-
-> **Nota sobre depósitos vs. saques:** o roteiro menciona depósitos *e* saques. O plano usa **depósitos puros** de propósito, porque assim o saldo final esperado é determinístico (`1000 + 1000 × 1,00 = 2000,00`) e o erro fica visualmente inegável. Para incluir saques, duplique o sampler dentro do Thread Group apontando para `/saque`.
-
 ---
 
 ## Relatório de Conclusão
