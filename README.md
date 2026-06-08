@@ -91,14 +91,14 @@ Configuração de cada grupo: **100 threads × 10 loops = 1000 depósitos** de `
 - Operações: **1000 depósitos** de **R$ 1,00**
 - Saldo final esperado: **R$ 2.000,00**
 
-### Parte 1 — sem controle de concorrência (valores ilustrativos)
+### Parte 1 — sem controle de concorrência
 
 <img width="735" height="398" alt="IMG-20260608-WA0031" src="https://github.com/user-attachments/assets/066620a3-cd7b-428f-a63b-c9899a9a7c68" />
 
 <img width="734" height="379" alt="IMG-20260608-WA0029" src="https://github.com/user-attachments/assets/bcd5aece-d6a3-4f65-9416-7d48331c22e3" />
 
 
-### Parte 2 — com `@Version` (valores ilustrativos)
+### Parte 2 — com `@Version`
 
 <img width="734" height="392" alt="IMG-20260608-WA0030" src="https://github.com/user-attachments/assets/322c1f07-1f48-4ce3-9cf4-de8d7773f7e4" />
 
