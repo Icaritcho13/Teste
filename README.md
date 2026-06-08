@@ -16,8 +16,8 @@ Trabalho prático sobre o problema da **Atualização Perdida (Lost Update)** em
 ## Pré-requisitos
 
 - **JDK 17** (ou superior)
-- **Maven 3.8+** (ou abra o projeto numa IDE com suporte a Maven)
-- **Apache JMeter 5.x** (para os testes de concorrência)
+- **Maven 3.8+** (ou IDE com suporte a Maven)
+- **Apache JMeter 5.x** (para testes de concorrência)
 
 ## Como rodar a aplicação
 
@@ -26,7 +26,7 @@ Trabalho prático sobre o problema da **Atualização Perdida (Lost Update)** em
 mvn spring-boot:run
 ```
 
-Ou abra o projeto na IDE (IntelliJ, Eclipse, VS Code com Extension Pack for Java) e execute a classe `ConcorrenciaBancoApplication`.
+Ou abrir o projeto na IDE (IntelliJ, Eclipse, VS Code com Extension Pack for Java) e executar a classe `ConcorrenciaBancoApplication`.
 
 A aplicação sobe em `http://localhost:8080`.
 
