@@ -98,24 +98,10 @@ Configuração de cada grupo: **100 threads × 10 loops = 1000 depósitos** de `
 - Saldo final esperado: **R$ 2.000,00**
 
 ### Parte 1 — sem controle de concorrência (valores ilustrativos)
-- Respostas `200 OK`: **1000** (todas "passam")
-- Respostas de erro: **0**
-- Saldo final observado: **R$ 1.453,00**
-- Diferença em relação ao esperado: **− R$ 547,00**
-- Print do *Relatorio Resumo* do JMeter: _‹inserir›_
-- Print do H2 console: _‹inserir›_
 
-**Análise:** todas as 1000 requisições retornaram sucesso, mas o saldo final ficou **muito abaixo** do esperado. Várias transações leram o mesmo saldo antes de outra gravar, e a última escrita sobrescreveu as anteriores (Lost Update). O banco executou cada comando corretamente — a inconsistência surge da leitura obsoleta no nível da aplicação, não do SGBD.
+
 
 ### Parte 2 — com `@Version` (valores ilustrativos)
-- Respostas `200 OK`: **420**
-- Respostas `409 Conflict`: **580**
-- Saldo final observado: **R$ 1.420,00**  (= 1000 + 420 operações aceitas)
-- Coluna `version` no banco: **420**
-- Print do *Relatorio Resumo* / *Arvore de Resultados* do JMeter: _‹inserir›_
-- Print do H2 console (com a coluna `version`): _‹inserir›_
-
-**Análise:** o saldo final ficou **perfeitamente consistente** com o número de operações aceitas (1000 + 420 = 1420), e a coluna `version` confirma exatamente 420 atualizações aplicadas. O `@Version` faz o Hibernate rejeitar a escrita perdedora de cada conflito, lançando `ObjectOptimisticLockingFailureException` (tratada como `409 Conflict`). Nenhuma atualização foi silenciosamente perdida.
 
 ### Comparação e trade-off
 
@@ -126,4 +112,7 @@ Configuração de cada grupo: **100 threads × 10 loops = 1000 depósitos** de `
 | Atualizações perdidas silenciosamente | Sim | Nenhuma |
 | Mecanismo de defesa | Nenhum | Rejeita a escrita perdedora |
 
-**Conclusão:** o controle otimista **não conclui** a operação concorrente — ele a **rejeita** (`409`), garantindo consistência ao custo de operações descartadas. A Parte 1 aceita tudo mas corrompe o saldo; a Parte 2 protege o saldo mas exige que o cliente reexecute (retry) as requisições que receberam `409`. Em um sistema de produção, esse retry completaria o padrão.
+**Conclusão:** o controle otimista **não conclui** a operação concorrente — ele a **rejeita** (`409`), garantindo consistência ao custo de operações descartadas. A Parte 1 aceita tudo mas corrompe o saldo; a Parte 2 protege o saldo mas exige que o cliente reexecute (retry) as requisições que receberam `409`. Em um sistema de produção, esse retry completaria o padrão.<img width="735" height="398" alt="IMG-20260608-WA0031" src="https://github.com/user-attachments/assets/066620a3-cd7b-428f-a63b-c9899a9a7c68" />
+
+![Uploading IMG-20260608-WA0031.jpg…]()
+
