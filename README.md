@@ -98,7 +98,7 @@ Configuração de cada grupo: **100 threads × 10 loops = 1000 depósitos** de `
 - Saldo final esperado: **R$ 2.000,00**
 
 ### Parte 1 — sem controle de concorrência (valores ilustrativos)
-
+<img width="735" height="398" alt="IMG-20260608-WA0031" src="https://github.com/user-attachments/assets/066620a3-cd7b-428f-a63b-c9899a9a7c68" />
 
 
 ### Parte 2 — com `@Version` (valores ilustrativos)
@@ -112,7 +112,4 @@ Configuração de cada grupo: **100 threads × 10 loops = 1000 depósitos** de `
 | Atualizações perdidas silenciosamente | Sim | Nenhuma |
 | Mecanismo de defesa | Nenhum | Rejeita a escrita perdedora |
 
-**Conclusão:** o controle otimista **não conclui** a operação concorrente — ele a **rejeita** (`409`), garantindo consistência ao custo de operações descartadas. A Parte 1 aceita tudo mas corrompe o saldo; a Parte 2 protege o saldo mas exige que o cliente reexecute (retry) as requisições que receberam `409`. Em um sistema de produção, esse retry completaria o padrão.<img width="735" height="398" alt="IMG-20260608-WA0031" src="https://github.com/user-attachments/assets/066620a3-cd7b-428f-a63b-c9899a9a7c68" />
-
-![Uploading IMG-20260608-WA0031.jpg…]()
-
+**Conclusão:** o controle otimista **não conclui** a operação concorrente — ele a **rejeita** (`409`), garantindo consistência ao custo de operações descartadas. A Parte 1 aceita tudo mas corrompe o saldo; a Parte 2 protege o saldo mas exige que o cliente reexecute (retry) as requisições que receberam `409`. Em um sistema de produção, esse retry completaria o padrão. 
