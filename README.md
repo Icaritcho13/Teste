@@ -4,7 +4,7 @@ Trabalho prático sobre o problema da **Atualização Perdida (Lost Update)** em
 
 ## Entrega
 
-- **Repositório GitHub:** https://github.com/Icaritcho13/Teste
+- **Repositório GitHub:** https://github.com/Icaritcho13/ConcorrenciaConsistencia
 
 ## Integrantes e divisão
 
