@@ -100,12 +100,14 @@ Configuração de cada grupo: **100 threads × 10 loops = 1000 depósitos** de `
 ### Parte 1 — sem controle de concorrência (valores ilustrativos)
 
 <img width="735" height="398" alt="IMG-20260608-WA0031" src="https://github.com/user-attachments/assets/066620a3-cd7b-428f-a63b-c9899a9a7c68" />
+
 <img width="734" height="379" alt="IMG-20260608-WA0029" src="https://github.com/user-attachments/assets/bcd5aece-d6a3-4f65-9416-7d48331c22e3" />
 
 
 ### Parte 2 — com `@Version` (valores ilustrativos)
 
 <img width="734" height="392" alt="IMG-20260608-WA0030" src="https://github.com/user-attachments/assets/322c1f07-1f48-4ce3-9cf4-de8d7773f7e4" />
+
 <img width="735" height="407" alt="IMG-20260608-WA0032" src="https://github.com/user-attachments/assets/0190ae9e-2b9a-4122-8937-49ea999b2c1c" />
 
 
@@ -114,7 +116,7 @@ Configuração de cada grupo: **100 threads × 10 loops = 1000 depósitos** de `
 | Critério | Parte 1 (sem trava) | Parte 2 (`@Version`) |
 |---|---|---|
 | Todas as operações são aplicadas? | Sim (todas `200`) | Não — algumas viram `409` |
-| Saldo final | Inconsistente (R$ 1.453,00) | Consistente (R$ 1.420,00 = 1000 + aceitas) |
+| Saldo final | Inconsistente (R$ 1.180,00) | Consistente (R$ 1.270,00 = 1000 + aceitas) |
 | Atualizações perdidas silenciosamente | Sim | Nenhuma |
 | Mecanismo de defesa | Nenhum | Rejeita a escrita perdedora |
 
